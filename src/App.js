@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Footer } from './Component/Footer/Footer';
+import { HomeLeftComponent } from './Component/HomeLeftComponent';
+import { HomeRightComponent } from './Component/HomeRightComponent';
+import { Navbar } from './Component/Navbar/Navbar';
 
 function App() {
+  const [isDark,setIsDark] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Navbar /> */}
+      <div className='flex min-h-screen'>
+        <HomeLeftComponent isDark={isDark}/>
+        <HomeRightComponent setIsDark={setIsDark} isDark={isDark}/>
+      </div>
+      <Footer isDark={isDark}/>
+    </>
   );
 }
 
