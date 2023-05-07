@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = ({ isDark }) => {
     return (
-        <div className={`${!isDark ? 'bg-red-500 text-white' : 'bg-black text-gray-300'} p-5 grid grid-cols-2 gap-5`}>
+        <div className={`${!isDark ? 'bg-red-500 text-white' : 'bg-black text-gray-300'} p-5 grid grid-cols-1 md:grid-cols-2 gap-5`}>
             <div
                 onClick={() => { window.open('https://apps.apple.com/us/app/holy-vible/id6444683138') }}
                 className={`cursor-pointer hover:relative hover:bottom-2 ${!isDark ? 'bg-white text-black' : 'bg-gray-900 text-gray-300'} grid grid-cols-2 gap-2 border border-grey-300 rounded-lg shadow-lg`}>

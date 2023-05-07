@@ -7,12 +7,13 @@ import { Navbar } from './Component/Navbar/Navbar';
 
 function App() {
   const [isDark,setIsDark] = useState(false);
+  const [showSideComponent,setShowSideComponent] = useState(true);
   return (
     <>
       {/* <Navbar /> */}
       <div className='flex min-h-screen'>
-        <HomeLeftComponent isDark={isDark}/>
-        <HomeRightComponent setIsDark={setIsDark} isDark={isDark}/>
+        <HomeLeftComponent isDark={isDark} setShowSideComponent={setShowSideComponent} showSideComponent={showSideComponent}/>
+        <HomeRightComponent setIsDark={setIsDark} isDark={isDark} showSideComponent={showSideComponent}/>
       </div>
       <Footer isDark={isDark}/>
     </>

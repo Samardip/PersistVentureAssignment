@@ -5,7 +5,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Switch } from '@mui/material';
 import { Popover } from 'react-tiny-popover'
 
-export const HomeRightComponent = ({ isDark, setIsDark }) => {
+export const HomeRightComponent = ({ isDark, setIsDark, showSideComponent }) => {
     const [newPoints, setNewPoints] = useState(false);
     const points = [{
         text: 'Everything you can’t change happened for a good reason. If it did not, it is better to think that it did.'
@@ -33,7 +33,7 @@ export const HomeRightComponent = ({ isDark, setIsDark }) => {
     }
     ]
     return (
-        <div className={`w-[65%] flex flex-col gap-10 ${!isDark ? 'bg-white' : 'bg-gray-900 text-gray-300'}`}>
+        <div className={`${showSideComponent?'w-[65%]':'w-[100%]'} flex flex-col gap-10 ${!isDark ? 'bg-white' : 'bg-gray-900 text-gray-300'}`}>
             <div className='flex justify-end absolute right-[77px] top-[6px]'>
                 {isDark ? 'Dark' : 'Light'}&nbsp;mode
             </div>
